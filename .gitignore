@@ -1,0 +1,17 @@
+/node_modules
+
+/dist
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+.env
+
+#  Se eu entendi certo:
+#  Este arquivo diz ao Git quais arquivos e 
+#  pastas ele deve intencionalmente ignorar. 
+#  Para um projeto Node.js/TypeScript, é 
+#  absolutamente essencial ignorar a pasta 
+#  node_modules (que pode conter milhares de 
+#  arquivos) e a pasta dist (código compilado)
