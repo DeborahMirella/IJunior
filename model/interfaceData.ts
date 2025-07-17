@@ -1,9 +1,11 @@
 export interface  Data {
 
-    nome: string;
-    valor: number;
-    peso: number;
-    quantidade: number;
+    ID: number;
+    Nome: string;
+    Peso: number;
+    Valor: number;
+    Quantidade: number;
+    Ativo: boolean;
 
 }
 

@@ -17,17 +17,27 @@ export async function escreverCSV(data: Data[]) : Promise<void> {
         
         //Define as colunas do arquivo CSV
         header: [
-
-            { id: 'id', title: 'id' },
-            { id: 'nome', title: 'id' },
-            { id: 'quantidade', title: 'quantidade '},
-            { id: 'precoUnitario', title: 'precoUnitario' },
-            { id: 'dataEntrada', title: 'dataEntrada'},
+            
+            { id: 'ID', title: 'ID'},
+            { id: 'Nome', title: 'Nome' },
+            { id: 'Peso', title: 'Peso '},
+            { id: 'Valor', title: 'Valor' },
+            { id: 'Quantidade', title: 'Quantidade'},
+            { id: 'Ativo', title: 'Ativo'},
 
         ],
 
     });
+    
+    try {
 
     await csvWriter.writeRecords(data);
+
+    } catch (error) {
+
+        console.error("Erro ao escrever dados no arquivo CSV:", error);
+
+        throw error;
+    }
 
 }

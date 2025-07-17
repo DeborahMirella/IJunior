@@ -31,16 +31,40 @@ export function lerCSV(): Promise<Data[]> {
         }
     })
 
-    .pipe(csvParser())
+    .pipe(csvParser({
 
-    .on('data', (dado) => resultados.push(dado)) 
+        mapValues: ({ header, index, value }) => {
 
+            switch (header) {
+
+                case 'ID' :
+                case 'Valor' :
+                case 'Peso' :
+                case 'Quantidade':
+
+                return Number(value);
+
+                case 'Ativo' :
+
+                return value.toLowerCase() === 'true' || value === '1';
+
+                default:
+
+                return value;
+
+            }
+
+        }
+
+
+    } ))
+
+    .on('data', (dado: Data) =>  resultados.push(dado))
     .on('end', () => {
-
         resolve(resultados);
-
+        
     });
 
-    });
-
+ });
+    
 }
