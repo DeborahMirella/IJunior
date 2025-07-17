@@ -1,5 +1,30 @@
 {
+  "name": "semana-3",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DeborahMirella/IJunior.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DeborahMirella/IJunior/issues"
+  },
+  "homepage": "https://github.com/DeborahMirella/IJunior#readme",
+  "description": "",
+  "dependencies": {
+    "csv-parser": "^3.2.0",
+    "csv-writer": "^1.6.0",
+    "inquirer": "^12.7.0"
+  },
   "devDependencies": {
-    "@types/node": "^24.0.14"
+    "@types/node": "^24.0.14",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
   }
 }
