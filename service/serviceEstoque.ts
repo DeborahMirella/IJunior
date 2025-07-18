@@ -17,6 +17,7 @@ export async function AdicionarItem(itemData: Omit<Data, 'ID' | 'Ativo'>): Promi
 
     const maxId = itens.reduce((max,item) => (item.ID > max ? item.ID : max), 0);
     
+    //Implementação do ID
     const novoItem: Data = {
     ID: maxId + 1,
     ...itemData,
@@ -123,6 +124,4 @@ export async function contarProdutosUnicos(): Promise<number> {
     return activeItens.length;
 
 }
-
-//Buscar ID
 
