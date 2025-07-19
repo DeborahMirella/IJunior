@@ -125,3 +125,10 @@ export async function contarProdutosUnicos(): Promise<number> {
 
 }
 
+export async function buscarItemPorId(id: number): Promise<Data | undefined> {
+
+    const activeItens = await getActiveItens();
+
+    
+    return activeItens.find(item => item.ID === id);
+}
