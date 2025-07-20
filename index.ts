@@ -5,9 +5,9 @@ async function mainMenu(): Promise<void> {
 
     while (true) {
 
-        console.log('\n====================');
+        console.log('\n===============================');
         console.log(' Sistema de Gestão de Estoque');
-        console.log('======================');
+        console.log('===============================');
     
      try {
 
