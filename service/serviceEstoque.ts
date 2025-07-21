@@ -12,10 +12,22 @@ async function getActiveItens(): Promise<Data[]> {
 
 // Adiciona Item
 export async function AdicionarItem(itemData: Omit<Data, 'ID' | 'Ativo'>): Promise<Data> {
-   
+    
+    /*
+    console.log("\n\n--- [DEBUG] INÍCIO DO PROCESSO AdicionarItem ---");
+    console.log("Dados recebidos para o novo item:", itemData);
+    */
+
     const itens = await lerCSV();
+    
+    /*
+    const itensAntes = await lerCSV();
+    console.log("--- [DEBUG] DADOS LIDOS DO CSV (ANTES DE ADICIONAR): ---");
+    console.table(itensAntes);
+    */
 
     const maxId = itens.reduce((max,item) => (item.ID > max ? item.ID : max), 0);
+    //const maxId = itensAntes.reduce((max, item) => (item.ID > max ? item.ID : max), 0);
     
     //Implementação do ID
     const novoItem: Data = {
@@ -24,10 +36,25 @@ export async function AdicionarItem(itemData: Omit<Data, 'ID' | 'Ativo'>): Promi
     Ativo: true,
 
 };
+    
+/*
+    console.log("--- [DEBUG] NOVO ITEM CRIADO: ---", novoItem);
+     
+    const itensDepois = [...itensAntes, novoItem];
+    console.log("--- [DEBUG] LISTA COMPLETA (ANTES DE SALVAR NO CSV): ---");
+    console.table(itensDepois);
+*/
 
 itens.push(novoItem);
 await escreverCSV(itens);
-return novoItem;
+
+/*
+    await escreverCSV(itensDepois);
+    console.log("--- [DEBUG] ESCRITA NO CSV CONCLUÍDA. ---");
+    console.log("--- [DEBUG] FIM DO PROCESSO AdicionarItem ---\n\n");
+*/
+
+    return novoItem;
 
 }
 

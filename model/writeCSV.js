@@ -12,6 +12,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.escreverCSV = escreverCSV;
 const csv_writer_1 = require("csv-writer");
@@ -24,7 +25,7 @@ function escreverCSV(data) {
             header: [
                 { id: 'ID', title: 'ID' },
                 { id: 'Nome', title: 'Nome' },
-                { id: 'Peso', title: 'Peso ' },
+                { id: 'Peso', title: 'Peso' },
                 { id: 'Valor', title: 'Valor' },
                 { id: 'Quantidade', title: 'Quantidade' },
                 { id: 'Ativo', title: 'Ativo' },

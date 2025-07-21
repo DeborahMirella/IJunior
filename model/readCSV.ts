@@ -8,7 +8,7 @@ import fs from 'fs';                        // Importa o módulo 'fs' (File Syst
 import { Data } from './interfaceData' ;   //  Importa a interface 'Data' de um arquivo local
 import csvParser from 'csv-parser';       // Importa a fnção principal da biblioteca 'csv-parser' (que foi instalada via npm). Esta função é a ferramenta especializada que sabe como interpretar o formato CSV
 
-const ARQUIVO_SCV = './estoque.csv'
+const ARQUIVO_CSV = './estoque.csv'
 
 export function lerCSV(): Promise<Data[]> {
 
@@ -16,7 +16,7 @@ export function lerCSV(): Promise<Data[]> {
 
     const resultados: Data[] = [];
 
-    fs.createReadStream(ARQUIVO_SCV)
+    fs.createReadStream(ARQUIVO_CSV)
 
     .on('error', (err) => {
 
@@ -35,16 +35,15 @@ export function lerCSV(): Promise<Data[]> {
 
         mapValues: ({ header, index, value }) => {
 
-            switch (header) {
-
-                case 'ID' :
-                case 'Valor' :
-                case 'Peso' :
+            switch (header.trim()) {
+                case 'ID':
+                case 'Valor':
+                case 'Peso':
                 case 'Quantidade':
 
                 return Number(value);
 
-                case 'Ativo' :
+                case 'Ativo':
 
                 return value.toLowerCase() === 'true' || value === '1';
 

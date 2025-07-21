@@ -1,2 +1,10 @@
-ID,Nome,Peso ,Valor,Quantidade,Ativo
-1,Arroz,,10,3,false
+ID,Nome,Peso,Valor,Quantidade,Ativo
+1,Arroz,0,1,1,false
+2,2,0,2,2,false
+3,Açucar,0,3,3,false
+4,ARROZ,0,1,1,false
+5,Arroz,1,1,1,false
+6,Arroz,1,1,1,false
+7,Feijão,2,2,2,false
+8,Arroz,1,1,1,true
+9,Feijão,2,2,2,true
